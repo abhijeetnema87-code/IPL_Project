@@ -150,6 +150,8 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.2vw,32px);c
 .tag.md{background:#f6ecdd;color:#9a5f14}
 .tag.img{background:#efeaf6;color:#5b4a86}
 .register .desc{color:#42535e;font-size:13.5px}
+.register td.grp{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--approve);font-weight:600;background:var(--paper);padding:11px 18px;border-bottom:1px solid var(--line)}
+.register tr:hover td.grp{background:var(--paper)}
 @media(max-width:720px){.register .desc-col{display:none}}
 
 /* viewer */
@@ -182,7 +184,7 @@ footer{border-top:1px solid var(--line);background:var(--card)}
 <div class="control">
   <span><b>DOC ID</b>&nbsp; PGAI-2026-001</span>
   <span><b>PROJECT</b>&nbsp; ProcessGenius AI · IPL Project</span>
-  <span><b>REV</b>&nbsp; 2.0</span>
+  <span><b>REV</b>&nbsp; 3.0</span>
   <span><b>STATUS</b>&nbsp; PILOT APPROVED — 4 MONTHS · 3 FINANCE CLIENTS</span>
 </div>
 
@@ -351,21 +353,29 @@ footer{border-top:1px solid var(--line);background:var(--card)}
 
 <section id="artifacts" style="padding-top:0">
   <div class="sec-head"><span class="sec-id">§ 07</span><h2>Project artifact register</h2></div>
-  <p class="sec-sub">Every deliverable in this repository, catalogued the way a compliance team would want it.</p>
+  <p class="sec-sub">Every deliverable in this repository, grouped the way a compliance team would file it — strategy, research, technical, and reference.</p>
   <div class="register reveal">
     <table>
       <thead><tr><th>Artifact</th><th>Type</th><th class="desc-col">Description</th></tr></thead>
       <tbody>
-        <tr>
-          <td class="fname"><a href="Master%20Document.docx">Master Document.docx</a></td>
-          <td><span class="tag doc">DOCX</span></td>
-          <td class="desc desc-col">The complete project record: caselet, COSTARS prompts, Working Backwards document, personas, and survey instrument — end to end. Also embedded below.</td>
-        </tr>
+        <tr><td colspan="3" class="grp">Strategy &amp; business case</td></tr>
         <tr>
           <td class="fname"><a href="ProcessGenius_AI_Working_Backwards_Document.docx">ProcessGenius_AI_Working_Backwards_Document.docx</a></td>
           <td><span class="tag doc">DOCX</span></td>
           <td class="desc desc-col">Internal mock press release with problem, solution, customer quote, call to action, and internal FAQs on guardrails, measurement, and liability.</td>
         </tr>
+        <tr>
+          <td class="fname"><a href="ProcessGenius_AI_Roadmap.docx">ProcessGenius_AI_Roadmap.docx</a></td>
+          <td><span class="tag doc">DOCX</span></td>
+          <td class="desc desc-col">12-month, 7-phase roadmap from the guardrail-first finance pilot to a multi-vertical platform, gated by a Month-4 Go/No-Go and a Month-7 scale decision. Embedded below.</td>
+        </tr>
+        <tr>
+          <td class="fname"><a href="Cost_Benefit_Analysis_One_Page_Summary.docx">Cost_Benefit_Analysis_One_Page_Summary.docx</a></td>
+          <td><span class="tag doc">DOCX</span></td>
+          <td class="desc desc-col">Illustrative 3-year cost–benefit case: ~$6.64M cumulative net benefit, ~$1.44M investment, ~4.6x ROI, sub-1-year payback, with drivers and assumptions.</td>
+        </tr>
+
+        <tr><td colspan="3" class="grp">Customers &amp; research</td></tr>
         <tr>
           <td class="fname"><a href="ProcessGeniusAI_Personas.docx">ProcessGeniusAI_Personas.docx</a></td>
           <td><span class="tag doc">DOCX</span></td>
@@ -379,13 +389,32 @@ footer{border-top:1px solid var(--line);background:var(--card)}
         <tr>
           <td class="fname"><a href="ProcessGenius_AI_Customer_Insight_Survey.md">ProcessGenius_AI_Customer_Insight_Survey.md</a></td>
           <td><span class="tag md">MD</span></td>
-          <td class="desc desc-col">15-question Google Forms survey spec with section flow, question types, grid scales, and segmentation notes.</td>
+          <td class="desc desc-col">15-question Customer Insight Survey spec with section flow, question types, grid scales, and segmentation notes.</td>
         </tr>
         <tr>
           <td class="fname"><a href="ProcessGeniusAI_DataSet.csv">ProcessGeniusAI_DataSet.csv</a></td>
           <td><span class="tag data">CSV</span></td>
           <td class="desc desc-col">200 synthetic survey responses: firmographics, spend, and 1–7 priority scores (accuracy, turnaround, risk, integration, trust, urgency) plus goals and pain points.</td>
         </tr>
+
+        <tr><td colspan="3" class="grp">Technical &amp; delivery</td></tr>
+        <tr>
+          <td class="fname"><a href="ProcessGenius_AI_RAG_Technical_Documentation.docx">ProcessGenius_AI_RAG_Technical_Documentation.docx</a></td>
+          <td><span class="tag doc">DOCX</span></td>
+          <td class="desc desc-col">Working-prototype RAG pipeline built in Langflow with Astra DB and OpenAI embeddings, COSTAR-S prompting — answers grounded in retrieved clauses, declining when the source is silent.</td>
+        </tr>
+        <tr>
+          <td class="fname"><a href="ProcessGenius_AI_Experimentation_Plan.docx">ProcessGenius_AI_Experimentation_Plan.docx</a></td>
+          <td><span class="tag doc">DOCX</span></td>
+          <td class="desc desc-col">4-month, 3-client pilot plan: assumptions to validate and time-boxed experiments (time-to-document, change-detection recall, adoption/trust) with success thresholds.</td>
+        </tr>
+        <tr>
+          <td class="fname"><a href="ProcessGenius_AI_Ethical_Oversight_Plan.docx">ProcessGenius_AI_Ethical_Oversight_Plan.docx</a></td>
+          <td><span class="tag doc">DOCX</span></td>
+          <td class="desc desc-col">Responsible-AI governance: review board, Compliance-Lead veto, named human approver of record, and a guardrail matrix (accuracy, human-in-loop, transparency, bias, privacy) with escalation triggers.</td>
+        </tr>
+
+        <tr><td colspan="3" class="grp">Reference</td></tr>
         <tr>
           <td class="fname"><a href="FDA_ComplDoc_Sample.docx">FDA_ComplDoc_Sample.docx</a></td>
           <td><span class="tag doc">DOCX</span></td>
@@ -403,17 +432,17 @@ footer{border-top:1px solid var(--line);background:var(--card)}
   <div class="viewer reveal">
     <div class="bar">
       <span class="dots"><span></span><span></span><span></span></span>
-      <span class="t">Master Document.docx — embedded preview</span>
-      <a href="Master%20Document.docx" style="margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--navy);font-weight:600;text-decoration:none">Download ↓</a>
+      <span class="t">ProcessGenius_AI_Roadmap.docx — embedded preview</span>
+      <a href="ProcessGenius_AI_Roadmap.docx" style="margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--navy);font-weight:600;text-decoration:none">Download ↓</a>
     </div>
-    <iframe loading="lazy" title="Master Document preview" src="https://view.officeapps.live.com/op/embed.aspx?src=https://abhijeetnema87-code.github.io/IPL_Project/Master%20Document.docx"></iframe>
+    <iframe loading="lazy" title="ProcessGenius AI Roadmap preview" src="https://view.officeapps.live.com/op/embed.aspx?src=https://abhijeetnema87-code.github.io/IPL_Project/ProcessGenius_AI_Roadmap.docx"></iframe>
   </div>
 </section>
 
 <footer>
   <div class="foot-in">
     <div><strong style="color:var(--navy)">ProcessGenius AI</strong> · Axiom Solutions — IPL Project</div>
-    <div class="mono">PGAI-2026-001 · REV 2.0 · <a href="https://github.com/abhijeetnema87-code/IPL_Project">github.com/abhijeetnema87-code/IPL_Project</a></div>
+    <div class="mono">PGAI-2026-001 · REV 3.0 · <a href="https://github.com/abhijeetnema87-code/IPL_Project">github.com/abhijeetnema87-code/IPL_Project</a></div>
   </div>
 </footer>
 
